@@ -1,7 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import useVdocipher from '../hooks/useVdocipherAPI';
 import { extractVideoParams } from '../utils/format';
-import VideoStatusUsingAPI from './Status';
 
 const VideoComponent = ({ video }) => {
   const { loadVideo, isAPIReady } = useVdocipher();
@@ -40,7 +39,6 @@ const VideoComponent = ({ video }) => {
   return (
     <>
       <div className='vdo-container' ref={videoContainerRef} ></div>
-      <VideoStatusUsingAPI videoRef={videoRef} isAPIReady={isAPIReady} video={video} key={video?.id} />
     </>
   );
 };
